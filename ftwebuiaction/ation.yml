@@ -1,0 +1,24 @@
+name: 'HOT-UI-FT Action'
+description: 'HOT-UI-FT Action'
+inputs:
+  productpath:
+    description: 'productpath'
+    required: true
+  project:
+    description: 'Project'
+    required: true
+  suite:
+    description: 'suite'
+    required: true
+  logformat:
+    description: 'logformat'
+    required: true
+  userargs:
+    description: 'userargs'
+    required: false
+  itercount:
+    description: 'itercount'
+    required: false      
+runs:
+  using: 'node16'
+  main: 'index.js'

@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
 
   WEBUI-Action:
-    runs-on: newagent
+    runs-on: self-hosted
     name: Execute FT-UI(Traditional) Test
     steps:
       - name: Execute test

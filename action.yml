@@ -4,8 +4,8 @@ inputs:
   productpath:
     description: 'productpath'
     required: true
-  project:
-    description: 'Project'
+  projectdir:
+    description: 'projectdir'
     required: true
   suite:
     description: 'suite'

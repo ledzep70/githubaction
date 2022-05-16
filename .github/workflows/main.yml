@@ -1,0 +1,19 @@
+name: HOT-UI-FT Action
+
+on: workflow_dispatch
+
+jobs:
+
+  WEBUI-Action:
+    runs-on: newagent
+    name: Execute FT-UI(Traditional) Test
+    steps:
+      - name: Execute test
+        uses: ledzep70/githubaction@main
+        with:
+          productpath: C:\Program Files\HCL\HCLOneTest12.2.4
+          projectdir: C:\Users\praveen.rathor\HCL\hclonetest\ftwork\FunctionalTesterDemo  
+          suite: ClassicsJavaA
+          logformat: xml
+          
+          

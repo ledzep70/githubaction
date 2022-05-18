@@ -44,7 +44,7 @@ const main = async () =>
         }
 
                 let tempDir = os.tmpdir();
-                let filePath = path.join(tempDir, suite + '.ps1');
+                let filePath = path.join(tempDir, suite + '.bat');
                 await fs.writeFileSync(
                         filePath,
                         script, 

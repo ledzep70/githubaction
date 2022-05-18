@@ -13,7 +13,7 @@ jobs:
         with:
           productpath: C:\Program Files\HCL\HCLOneTest12.2.4
           projectdir: C:\Users\praveen.rathor\HCL\hclonetest\ftwork\FunctionalTesterDemo  
-          suite: ClassicsJavaA
+          suite: ClassicsJava_FindBasedScript
           logformat: xml
           
           

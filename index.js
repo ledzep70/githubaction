@@ -59,7 +59,7 @@ const main = async () =>
                 });
                 child.stderr.on("data",function(data){
                     console.log("Errors: " + data);
-                    core.setFailed(data);
+                    
                 });
                 child.on("exit",function(){
                     console.log("Powershell Script finished");

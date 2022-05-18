@@ -52,8 +52,14 @@ const main = async () =>
                 
                 console.log(script);
                 console.log('========================== Starting Command Output ===========================');
-        
-        var bat = require.resolve(filePath);
+        var child_process = require('child_process');
+
+child_process.exec(filePath, function(error, stdout, stderr) {
+    console.log("stdout "+stdout);
+    console.log("stderr "+stderr)
+    console.log("error "+error)
+});
+     /*   var bat = require.resolve(filePath);
                         var profile = require.resolve('../profiles/app.profile.js');
                         var ls = spawn(bat, ['--profile', profile]);
                         
@@ -72,7 +78,7 @@ const main = async () =>
                             ls.on('close', resolve)
                         });
                         child.stdin.end();
-                /*var spawn = require("child_process").spawn,child;
+                var spawn = require("child_process").spawn,child;
                 child =  spawn("cmd.exe",[filePath]);
                 child.stdout.on("data",function(data){
                     console.log(" " + data);

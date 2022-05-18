@@ -18,10 +18,10 @@ const main = async () =>
 
         var iterations = ' ';
         var args = '';
-        if (itercount != null) {
+        if (itercount) {
             iterations = ' -iterationCount ' + itercount;
         }
-        if (userargs != null) {
+        if (userargs) {
             args = ' -args ' + userargs + ' ';
         }
         if (process.platform == 'linux') {

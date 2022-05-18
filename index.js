@@ -44,7 +44,7 @@ const main = async () =>
         }
 
                 let tempDir = os.tmpdir();
-                let filePath = path.join(tempDir, suite + '.bat');
+                let filePath = path.join(tempDir, suite + '.ps1');
                 await fs.writeFileSync(
                         filePath,
                         script, 
@@ -54,32 +54,10 @@ const main = async () =>
                 console.log('========================== Starting Command Output ===========================');
         var child_process = require('child_process');
 
-child_process.exec(filePath, function(error, stdout, stderr) {
-    console.log("stdout "+stdout);
-    console.log("stderr "+stderr)
-    console.log("error "+error)
-});
-     /*   var bat = require.resolve(filePath);
-                        var profile = require.resolve('../profiles/app.profile.js');
-                        var ls = spawn(bat, ['--profile', profile]);
-                        
-                        ls.stdout.on('data', function (data) {
-                            console.log('stdout: ' + data);
-                        });
-                        
-                        ls.stderr.on('data', function (data) {
-                            console.log('stderr: ' + data);
-                        });
-                        
-                        ls.on('exit', function (code) {
-                            console.log('child process exited with code ' + code);
-                        });
-                        await new Promise( (resolve) => {
-                            ls.on('close', resolve)
-                        });
-                        child.stdin.end();
+
+     
                 var spawn = require("child_process").spawn,child;
-                child =  spawn("cmd.exe",[filePath]);
+                child =  spawn("powershell.exe",[filePath]);
                 child.stdout.on("data",function(data){
                     console.log(" " + data);
                 });
@@ -94,7 +72,7 @@ child_process.exec(filePath, function(error, stdout, stderr) {
                 await new Promise( (resolve) => {
                     child.on('close', resolve)
                 });
-                child.stdin.end(); */
+                child.stdin.end(); 
                 var fResultFile = tempDir + path.sep + "CommandLineLog.txt"; 
                 if (fs.existsSync(fResultFile)) {
                     var verdictRegex = /--VERDICT=(INCONCLUSIVE|ERROR|PASS|FAIL).*/
